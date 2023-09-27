@@ -5,15 +5,15 @@ isDouble = 0
 
 
 def is_double_column_page(page):
-    global isDouble  # 声明isDouble为全局变量
+    global isDouble
     text = page.extract_text()
     lines = text.split('\n')
 
-    # 判断页面文本是否分为两列
+    # 判斷是否為雙欄式文章
     if len(lines) > 100:
-        isDouble += 1  # 增加isDouble计数
+        isDouble += 1
     else:
-        isDouble -= 1  # 减少isDouble计数
+        isDouble -= 1
 
 
 def check_pdf_for_double_column(pdf_path):
@@ -28,10 +28,10 @@ def check_pdf_for_double_column(pdf_path):
         print(f"Error: {str(e)}")
 
 
-pdf_path = 'C:/Users/ACER/Desktop/output/paper_11.pdf'
+pdf_path = r'C:\Users\ACER\Desktop\setPDF\pdf_files\paper_2.pdf'
 sys.stdout.reconfigure(encoding='utf-8')
 check_pdf_for_double_column(pdf_path)
 if isDouble < 0:
-    print("不是")
+    print("(X)不是雙欄式文章")
 else:
-    print("是")
+    print("(O)是雙欄式文章")

@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # 指定Google學術搜索的網址
-url = 'https://scholar.google.com.tw/scholar?hl=zh-TW&as_sdt=0,5&q=%22solar+system%22'
+url = 'https://scholar.google.com.tw/scholar?hl=zh-TW&as_sdt=0%2C5&q=%22solar+system%22&oq='
 
 # 發送GET請求以獲取網頁內容
 response = requests.get(url)
